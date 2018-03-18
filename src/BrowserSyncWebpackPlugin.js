@@ -230,9 +230,9 @@ module.exports = class BrowserSyncWebpackPlugin extends EventEmitter {
 				snippetOptions: {
 					rule: {
 						match: /<\/head>/i,
-						fn: function (snippet, match) {
+						fn: function(snippet, match) {
 							return snippet + match;
-						}
+						},
 					},
 				},
 				files:
