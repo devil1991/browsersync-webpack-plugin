@@ -227,6 +227,14 @@ module.exports = class BrowserSyncWebpackPlugin extends EventEmitter {
 					target: this.options.target,
 					middleware: this.middleware,
 				},
+				snippetOptions: {
+					rule: {
+						match: /<\/head>/i,
+						fn: function (snippet, match) {
+							return snippet + match;
+						}
+					},
+				},
 				files:
 					!this.useHtmlInjector() &&
 					this.options.watch
